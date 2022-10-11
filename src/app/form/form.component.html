@@ -1,0 +1,35 @@
+<div class="container shadow-lg">
+    <div class="row">
+        <h1>
+            My Form Here
+        </h1>
+        <form (ngSubmit) = "onSubmit(form)" #form = "ngForm" >
+            <div ngModelGroup = "Data">
+            <label>UserName</label>
+            <input type="text" class="form-control"  #user = "ngModel" ngModel name="username" required>
+           <span class="help-block" *ngIf="!user.valid && user.touched">Please Enter Valid Username</span>
+           <br>
+            <label>Password</label>
+            <input type="password" class="form-control" ngModel name="pass" required>
+
+            <label>Confirm Password</label>
+            <input type="password" class="form-control" ngModel name = "cpass" required>
+
+            <select [(ngModel)] = "gender" name="gen">
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+            <br>
+            <br>
+            
+<br>
+            <input type="submit" class="btn btn-success" [disabled] = "!form.valid">
+        </div>
+        </form>
+
+        <hr>
+        <div class="row" *ngIf = "submitted">
+        
+        </div>
+    </div>
+</div>
